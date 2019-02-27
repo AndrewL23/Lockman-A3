@@ -25,7 +25,9 @@ function display(req, res)
 {
   let result = {};
   //let songs = req.session.songs = [];
-  req.session.songs || []; 
+  if(req.session.songs == undefined)
+    req.session.songs = [];
+
   try
   {
     result = {'Songs' : req.session.songs};
